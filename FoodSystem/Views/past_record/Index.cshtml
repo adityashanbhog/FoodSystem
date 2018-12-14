@@ -1,0 +1,51 @@
+﻿@model List<p3>
+
+@{
+    ViewBag.Title = "Index";
+}
+<h2>History</h2>
+<table class="table">
+    <tr>
+        <th>
+            OrderId
+        </th>
+        <th>
+            Item Name
+        </th>
+        <th>
+            Item Price
+        </th>
+        <th>
+            Item Quantity
+        </th>
+    </tr>
+
+    @foreach (var i in this.Model)
+    {
+        foreach (var j in i.order)
+        {
+           // <text>ORDERID=</text> @j.orderID
+            @*<h1>
+                    BILLID=
+                    @j.bill.billID<br />
+                </h1>*
+                @*<h2>
+                    PAYMODE==
+                    @j.bill.paymentmode<br />
+                </h2>*@
+    foreach (var k in j.details)
+    {<tr>
+    <td>
+        @j.orderID
+    </td>
+      <td> @k.name</td>
+      
+          <td>@k.price</td>
+         <td>@k.quantity</td>
+    </tr>
+            }
+        }
+    }
+      </table>
+<br />
+@Html.ActionLink("Back to restaurant", "Index", "showhotel")

@@ -1,0 +1,41 @@
+﻿@model FoodSystem.Models.bill
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    <h4>bill</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.order.orderID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.order.orderID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.paymentmode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.paymentmode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.amount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to Restaurant", "Index","showhotel")
+</p>

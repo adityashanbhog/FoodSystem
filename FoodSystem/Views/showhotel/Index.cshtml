@@ -1,0 +1,37 @@
+﻿@model IEnumerable<FoodSystem.Models.restaurant>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<br>
+@Html.ActionLink("See Past Orders","Index","past_record")
+<br>
+<br>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.restaurant_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.restaurant_Address)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.restaurant_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.restaurant_Address)
+            </td>
+            <td>
+                @Html.ActionLink("menu", "menu", new { resid = item.restaurantID })
+            </td>
+        </tr>
+    }
+
+</table>

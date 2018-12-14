@@ -1,0 +1,42 @@
+﻿@model FoodSystem.Models.restaurant
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>restaurant</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.manager.manager_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.manager.manager_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.restaurant_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.restaurant_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.restaurant_Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.restaurant_Address)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.restaurantID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

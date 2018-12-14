@@ -1,0 +1,36 @@
+﻿@model List<p2>
+@{
+    ViewBag.Title = "submit";
+}
+
+<h2>submit</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Item Name
+        </th>
+        <th>
+            Item Price
+        </th>
+        <th>
+            Item Quantity
+        </th>
+        <th>
+            Sub Total
+        </th>
+    </tr>
+    @foreach (var i in this.Model)
+    {
+        foreach (var j in i.detail)
+        {<tr>
+           <td> @j.name </td>
+            
+           <td>@j.price</td>
+            <td>@j.quantity</td>
+            <td>@(j.quantity * j.price)</td>
+                </tr>
+        }
+    }
+    </table>
+    @Html.ActionLink("proceed", "Index", "bill")

@@ -1,0 +1,49 @@
+﻿@model List<FoodSystem.p1>
+
+@{
+    ViewBag.Title = "Menu";
+}
+
+<h2>Menu</h2>
+    
+    @foreach (var item in this.Model)
+    {
+
+        <th>
+            <h3>@item.name</h3>
+        </th>
+
+        var x = from m in item.value
+                orderby m.menu_Name
+                select m;
+        foreach (var i in x)
+        {
+            <table class="table" border="1">
+                <tr>
+                    <td width=50%>
+
+                        @i.menu_Name
+                    </td>
+                    <td width=30%>
+                        @i.price
+
+                    </td>
+                  <td>
+                      @Html.ActionLink("Edit", "Edit", new { id = i.menuID })
+                      </td>  
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", new { id = i.menuID })
+                    </td>    
+                </tr>
+            </table>
+
+        }
+    }
+
+    @Html.ActionLink("Create New", "Create")
+<br>
+@Html.ActionLink("Change Password", "Index","Manage")
+    
+
+    
+
